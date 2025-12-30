@@ -54,12 +54,14 @@ async function handleAddUser(e) {
         });
 
         if (!response.ok) {
+            alert(response.message);
             throw new Error('Failed to add user');
         }
 
         addUserForm.reset();
         loadUsers();
     } catch (error) {
+        alert(error.message);
         showError('Failed to add user');
     }
 }
